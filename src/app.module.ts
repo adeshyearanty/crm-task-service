@@ -9,12 +9,9 @@ import { TaskModule } from './task/task.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: `.env.${process.env.NODE_ENV || 'development'}`,
+      envFilePath: `.env`,
       isGlobal: true,
       validationSchema: Joi.object({
-        NODE_ENV: Joi.string()
-          .valid('development', 'production', 'staging')
-          .default('development'),
         PORT: Joi.number().default(3005),
         MONGO_USER: Joi.string().required(),
         MONGO_PASSWORD: Joi.string().required(),
