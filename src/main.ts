@@ -43,7 +43,7 @@ async function bootstrap() {
 
   // if (process.env.NODE_ENV !== 'production') {
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api-doc', app, document);
+  SwaggerModule.setup('tasks/api-docs', app, document);
   // }
 
   await app
